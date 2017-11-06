@@ -35,12 +35,3 @@ const storage = new StorageControl('local')
 ### clear()
 
 ストレージ内を削除
-
-### length
-
-```javascript
-const storage = new StorageControl('local')
-console.log(storage.length)
-```
-
-ストレージのキー数を取得
