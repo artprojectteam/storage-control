@@ -12,8 +12,8 @@ const storage = new StorageControl('local')
 
 | string | used |
 | --- | --- |
-| 'local' | window.localStorage |
-| 'session' | window.sessionStorage |
+| local | window.localStorage |
+| session | window.sessionStorage |
 
 'session'以外の値だったときはlocalStorageを使用。
 
