@@ -1,0 +1,39 @@
+{
+  "name": "storage-control",
+  "title": "WebStroage Control",
+  "version": "0.0.1",
+  "description": "web storage (local or session) control library",
+  "main": "dist/strage_control.js",
+  "uglify": "dist/strage_control.min.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artprojectteam/storage-control.git"
+  },
+  "keywords": [
+    "storage",
+    "web",
+    "local",
+    "session"
+  ],
+  "author": "Nobuyuki Kondo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/artprojectteam/storage-control/issues"
+  },
+  "homepage": "https://github.com/artprojectteam/storage-control",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.18.13",
+    "cross-conf-env": "^1.1.2",
+    "eslint": "^4.10.0",
+    "npm-run-all": "^4.1.1",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-uglify": "^2.0.1",
+    "uglify-save-license": "^0.4.1"
+  }
+}
