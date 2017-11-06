@@ -37,7 +37,7 @@ export default {
     format: 'umd',
     indent: true
   }],
-  name: 'CalcFrameRate',
+  name: 'StorageControl',
   strict: true,
   sourceMap: false,
   banner: `/*!
