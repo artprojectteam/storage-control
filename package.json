@@ -1,6 +1,6 @@
 {
   "name": "storage-control",
-  "title": "WebStroage Control",
+  "title": "WebStorage Control",
   "version": "0.0.1",
   "description": "web storage (local or session) control library",
   "main": "dist/strage_control.js",

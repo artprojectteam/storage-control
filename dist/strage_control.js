@@ -1,5 +1,5 @@
 /*!
-WebStroage Control v0.0.1
+WebStorage Control v0.0.1
 web storage (local or session) control library
 Copyright (c) 2017 Nobuyuki Kondo
 License: MIT
@@ -135,11 +135,71 @@ https://github.com/artprojectteam/storage-control
     }
   };
 
-  var _class = function _class() {
-    classCallCheck(this, _class);
+  var _class = function () {
+    /**
+     * initialize
+     * Use at LocalStorage in case of string isn't 'session'
+     * @param {string} use - 'local' or 'session'
+     */
+    function _class(use) {
+      classCallCheck(this, _class);
 
-    console.log('aaa');
-  };
+      switch (use) {
+        case 'session':
+          this._storage = sessionStorage;
+          return this;
+        default:
+          this._storage = localStorage;
+          return this;
+      }
+    }
+
+    /**
+     * saved json style
+     * @param {string} key
+     * @param {string|Array|object} val
+     */
+
+
+    _class.prototype.save = function save(key, val) {
+      this._storage.setItem(key, JSON.stringify(val, null, 0));
+      return this;
+    };
+
+    /**
+     * NULL at not exist, parse of JSON at exist
+     * @param {string} key
+     * @returns {null|string|Array|object}
+     */
+
+
+    _class.prototype.get = function get$$1(key) {
+      var item = this._storage.getItem(key);
+      return item === undefined ? null : JSON.parse(item);
+    };
+
+    /**
+     * delete for item
+     * @param {string} key
+     */
+
+
+    _class.prototype.remove = function remove(key) {
+      this._storage.removeItem(key);
+      return this;
+    };
+
+    /**
+     * all clear
+     */
+
+
+    _class.prototype.clear = function clear() {
+      this._storage.clear();
+    };
+
+    return _class;
+  }();
 
   return _class;
 
