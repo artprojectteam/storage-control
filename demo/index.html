@@ -58,10 +58,11 @@
   var storage = new StorageControl('session')
 
   storage
-    .save('a', 'あいあ')
+    .save('a', 0)
     .save('b', [0,1,2])
+    .save('c', {a: 0, b: 'aaa'})
 
-  console.log(storage.get('a'))
+  console.log(storage.get('a'), storage.get('c'))
 </script>
 </body>
 </html>

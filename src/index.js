@@ -18,7 +18,7 @@ export default class {
   /**
    * saved json style
    * @param {string} key
-   * @param {string|Array|object} val
+   * @param {number|string|Array|object} val
    */
   save (key, val) {
     this._storage.setItem(key, JSON.stringify(val, null, 0))
@@ -28,7 +28,7 @@ export default class {
   /**
    * NULL at not exist, parse of JSON at exist
    * @param {string} key
-   * @returns {null|string|Array|object}
+   * @returns {null|number|string|Array|object}
    */
   get (key) {
     const item = this._storage.getItem(key)
