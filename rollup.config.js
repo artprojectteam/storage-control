@@ -33,7 +33,7 @@ export default {
     format: 'umd',
     indent: true
   }, {
-    file: 'demo/storage_control.js',
+    file: 'demo/storage-control.js',
     format: 'umd',
     indent: true
   }],

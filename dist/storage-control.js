@@ -157,7 +157,7 @@ https://github.com/artprojectteam/storage-control
     /**
      * saved json style
      * @param {string} key
-     * @param {string|Array|object} val
+     * @param {number|string|Array|object} val
      */
 
 
@@ -169,7 +169,7 @@ https://github.com/artprojectteam/storage-control
     /**
      * NULL at not exist, parse of JSON at exist
      * @param {string} key
-     * @returns {null|string|Array|object}
+     * @returns {null|number|string|Array|object}
      */
 
 

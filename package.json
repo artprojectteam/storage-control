@@ -3,8 +3,8 @@
   "title": "WebStorage Control",
   "version": "0.0.1",
   "description": "web storage (local or session) control library",
-  "main": "dist/strage_control.js",
-  "uglify": "dist/strage_control.min.js",
+  "main": "dist/storage-control.js",
+  "uglify": "dist/storage-control.min.js",
   "scripts": {
     "start": "NODE_ENV=development npm-run-all -p _rollup:w",
     "prebuild": "npm-run-all -s _lint",
