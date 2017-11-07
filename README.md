@@ -53,7 +53,7 @@ const storage = new StorageControl('local')
 ### save(key, val)
 
 データを`key-value`で記録。  
-チェーンメソッド可能。
+メソッドチェーン可能。
 
 #### argument
 
@@ -81,7 +81,7 @@ storage.save('arr', [0, 'foo', 3])
 // object
 storage.save('obj', {foo: 'foo', bar: 1})
 
-// チェーンメソッド
+// method chain
 storage
   .save('num', 0)
   .save('str', 'foobar')
@@ -112,7 +112,7 @@ const res = storage.get('str')
 ### remove(key)
 
 キー名を指定してデータをキー名ごと削除。  
-チェーンメソッド可能。  
+メソッドチェーン可能。  
 
 #### argument
 
@@ -130,7 +130,7 @@ StorageControl Object
 ```js
 storage.remove('str')
 
-// チェーンメソッド
+// method chain
 storage
   .remove('str')
   .remove('foobar')
