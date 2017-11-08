@@ -1,5 +1,5 @@
 /*!
-WebStorage Control v0.0.1
+WebStorage Control v1.0.0
 web storage (local or session) control library
 Copyright (c) 2017 Nobuyuki Kondo
 License: MIT
