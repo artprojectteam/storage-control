@@ -1,0 +1,56 @@
+# https://eslint.org/docs/user-guide/configuring
+root: true
+parser: babel-eslint
+
+env:
+  node: true
+  browser: true
+  es6: true
+  commonjs: true
+
+extends: standard
+
+rules:
+  no-console:
+    - error
+    - allow:
+      - warn
+      - error
+  no-mixed-spaces-and-tabs: error
+  eol-last: off
+
+globals:
+  TimelineLite: false
+  TimelineMax: false
+  TweenLite: false
+  TweenMax: false
+  Back: false
+  Bounce: false
+  Circ: false
+  Cubic: false
+  Ease: false
+  EaseLookup: false
+  Elastic: false
+  Expo: false
+  Linear: false
+  Power0: false
+  Power1: false
+  Power2: false
+  Power3: false
+  Power4: false
+  Quad: false
+  Quart: false
+  Quint: false
+  RoughEase: false
+  Sine: false
+  SlowMo: false
+  SteppedEase: false
+  Strong: false
+  Draggable: false
+  SplitText: false
+  VelocityTracker: false
+  CSSPlugin: false
+  ThrowPropsPlugin: false
+  BezierPlugin: false
+  PIXI: false
+  moment: false

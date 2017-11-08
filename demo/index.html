@@ -1,0 +1,175 @@
+<!doctype html>
+<html id="html">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="google" content="notranslate">
+  <title>WebStorage Control</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
+  <style>
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      font: 1.8rem/1 'helvetica Neue', sans-serif;
+    }
+
+    .inner-pd {
+      padding: 2rem;
+    }
+
+    .header {
+      background: #eeeeee;
+    }
+
+    .header-title {
+      margin: 0;
+      padding: 1rem 0;
+    }
+
+    .footer {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    .footer-copy {
+      font-size: 1.2rem;
+    }
+
+    .main {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+
+    .container {
+      margin-bottom: 3em;
+    }
+
+    .container:last-child {
+      margin-bottom: 0;
+    }
+
+    .container-title {
+      margin: 0 0 1em;
+      font-size: 3rem;
+    }
+
+    .container-input {
+      margin-bottom: 1em;
+    }
+
+    .input {
+      padding: 0 0.5em;
+      box-sizing: border-box;
+      height: 40px;
+      border: 1px solid #cccccc;
+      box-shadow: 1px 2px 6px #dedede;
+    }
+
+    .btn {
+      cursor: pointer;
+      height: 40px;
+      background: #ffffff;
+      border: none;
+      margin-left: 0.6em;
+      padding: 0 1em;
+      box-shadow: 1px 2px 6px #c0c0c0;
+    }
+
+    .btn-save {
+      background: #61ac57;
+      color: #ffffff;
+    }
+
+    .btn-del {
+      background: #da6662;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+<header class="header inner-pd">
+  <h1 class="header-title">WebStorage Control</h1>
+</header>
+
+<main class="main inner-pd">
+  <article class="container">
+    <h1 class="container-title">LocalStorage</h1>
+
+    <div class="container-input">
+      <input id="local-input" type="text" class="input input-text" value="foobar">
+      <button id="local-save" class="btn btn-save" type="button">記録する</button>
+      <button id="local-del" class="btn btn-del" type="button">破棄する</button>
+    </div>
+
+    <div class="container-result">LocalStorageに記録されている値： <span id="local-result"></span></div>
+  </article>
+
+  <article class="container">
+    <h1 class="container-title">SessionStorage</h1>
+
+    <div class="container-input">
+      <input id="session-input" type="text" class="input input-text" value="john doe.">
+      <button id="session-save" class="btn btn-save" type="button">記録する</button>
+      <button id="session-del" class="btn btn-del" type="button">破棄する</button>
+    </div>
+
+    <div class="container-result">SessionStorageに記録されている値： <span id="session-result"></span></div>
+  </article>
+</main>
+
+
+<footer class="footer inner-pd">
+  <small class="footer-copy">&copy; Nobuyuki Kondo.</small>
+</footer>
+
+<script src="storage-control.js"></script>
+<script>
+  var funcRes = function (res) {
+      if (res === null || res === '') return 'NULL'
+
+      return res
+    }
+
+    // localStorage
+  ;(function () {
+    var res = document.getElementById('local-result')
+    var input = document.getElementById('local-input')
+    var storage = new StorageControl('local')
+    res.textContent = funcRes(storage.get('st'))
+
+    document.getElementById('local-save').addEventListener('click', function () {
+      var _res = storage.save('st', input.value).get('st')
+      res.textContent = funcRes(_res)
+    }, false)
+
+    document.getElementById('local-del').addEventListener('click', function () {
+      var _res = storage.remove('st').get('st')
+      res.textContent = funcRes(_res)
+    }, false)
+
+  })()
+
+  // sessionStorage
+  ;(function () {
+    var res = document.getElementById('session-result')
+    var input = document.getElementById('session-input')
+    var storage = new StorageControl('session')
+    res.textContent = funcRes(storage.get('st'))
+
+    document.getElementById('session-save').addEventListener('click', function () {
+      var _res = storage.save('st', input.value).get('st')
+      res.textContent = funcRes(_res)
+    }, false)
+
+    document.getElementById('session-del').addEventListener('click', function () {
+      var _res = storage.remove('st').get('st')
+      res.textContent = funcRes(_res)
+    }, false)
+  })()
+</script>
+</body>
+</html>
